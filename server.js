@@ -1,6 +1,9 @@
-const JWT = require('json-web-token')
+const JWT = require('jsonwebtoken')
 const server = require('express')
 const app = server()
+
+//middleware de proteção
+const middlewareProtect = require('./middleware')
 
 //dotenv para carregar as variáveis de ambiente
 require('dotenv').config()
@@ -80,4 +83,19 @@ app.post('/login', (req,res) => {
     }
 })
 
-app.listen(8999, () => console.log('Servidor aberto na porta 8999'))
+app.get('/protect', middlewareProtect, (req, res) => {
+    //Irá imprimir no teminal as informações do usúario que o token armazena
+    console.log(req.usuario)
+
+    //caso entre na rota com sucesso irá mandar o nome do usúario e mais as informações dele junto com um status 200 (SUCESSO)
+    res.status(200).json({
+        message: `Óla ${req.usuario.nome}!`,
+        usuario: req.usuario
+    })
+})
+
+module.exports = app
+
+if(process.env.NODE_ENV !== 'test') {
+  app.listen(8999, () => console.log('Servidor aberto na porta 8999'))
+}
