@@ -94,8 +94,6 @@ app.get('/protect', middlewareProtect, (req, res) => {
     })
 })
 
-module.exports = app
-
 if(process.env.NODE_ENV !== 'test') {
   app.listen(8999, () => console.log('Servidor aberto na porta 8999'))
 }
