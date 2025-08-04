@@ -1,4 +1,4 @@
-# jwt_api-auth
+# jwt-api-auth
 
 **API simples de autenticação usando JWT (JSON Web Tokens) com Node.js e Express.**
 
