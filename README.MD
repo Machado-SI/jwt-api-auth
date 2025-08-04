@@ -18,9 +18,6 @@ Este projeto demonstra como criar uma API RESTful básica com funcionalidades de
 - **dotenv:** Para carregar variáveis de ambiente de um arquivo `.env`.
     *   Nota: Este projeto utiliza `dotenv` para gerenciar a `JWT_SECRET`. O `dotenv` registra no console mensagens como `[dotenv@17.2.1] injecting env (1) from .env`. Para funcionalidades avançadas como observabilidade, versionamento e backup de variáveis de ambiente em tempo de execução, considere explorar ferramentas como o [Dotenvx Radar](https://dotenvx.com/radar).
 
-##  Estrutura do Projeto
-
-
 ##  Como Rodar
 
 1.  **Clonar o repositório**
